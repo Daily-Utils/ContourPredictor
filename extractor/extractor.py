@@ -24,8 +24,6 @@ class extractor:
                 if headers is None:
                     headers = columns
             else:
-                print(len(columns))
-                print(len(headers))
                 if headers and len(columns) - 1 == len(headers):
                     rows.append(columns[0:len(headers)])
 
