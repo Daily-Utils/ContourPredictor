@@ -5,7 +5,7 @@ class extractor:
         self.path = path
         self.file = file
 
-    def _extract(self) -> tuple[list[str], list[str]]:
+    def _extract_from_ansys_files(self) -> tuple[list[str], list[str]]:
         open_file = open(self.path + self.file, 'r')
         data = open_file.read()
 
@@ -41,5 +41,5 @@ class extractor:
         return new_path + new_file
 
     def process(self, new_path: str, new_file: str):
-        headers, data = self._extract()
+        headers, data = self._extract_from_ansys_files()
         return self._save_to_csv(data, headers, new_path, new_file)
